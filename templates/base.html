@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>    
+</head>
+<body>
+    <div id="whatsappStack" class="body2 whatsapp-btn">
+                         
+    </div> 
+<div id="body1">
+<!-- My cart-->
+<div class="body">
+    <section class="modal hidden">
+        <div class="flex">
+          <button class="btn-close"></button>
+        </div>
+        <div id="cartItem">Your cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">$ 0.00</h2>
+            </div>
+            <button class="checkout btn checkout-open">proceed to checkout</button>
+    </section>      
+      <div class="overlay hidden"></div>      
+</div>
+<!-- end -->
+<!-- checkout-->
+<div class="body1">
+    <section class="modal1 hidden1">
+        <div class="flex1">
+          <button class="btn-close1"></button>
+        </div>
+        <div class="container3">
+            <form>        
+                <div class="row">        
+                    <div class="col">        
+                        <h3 class="title">billing address</h3>        
+                        <div class="inputBox">
+                            <span>full name :</span>
+                            <input type="text" placeholder="john deo" value="" class="name">
+                        </div>
+                        <div class="inputBox">
+                            <span>email :</span>
+                            <input type="email" placeholder="example@example.com" value="" class="email">
+                        </div>
+                        <div class="inputBox">
+                            <span>address :</span>
+                            <input type="text" placeholder="room - street - locality" value=""class="address">
+                        </div>
+                        <div class="inputBox">
+                            <span>mobile no. :</span>
+                            <input type="text" placeholder="+91: XXXXXXXXXX" value="" class="number">
+                        </div>
+                        <div class="inputBox">
+                            <span>city :</span>
+                            <input type="text" placeholder="mumbai" value="" class="city">
+                        </div>        
+                        <div class="flex">
+                            <div class="inputBox">
+                                <span>state :</span>
+                                <input type="text" placeholder="india" value="" class="state">
+                            </div>
+                            <div class="inputBox">
+                                <span>zip code :</span>
+                                <input type="text" placeholder="123 456" value="" class="code">
+                            </div>
+                        </div>        
+                    </div>        
+                    <div class="col">        
+                        <h3 class="title">payment</h3>
+        
+                        <div class="inputBox">
+                            <span>cards accepted :</span>
+                            <img src="../static/images/card_img.png" alt="">
+                        </div>
+                        <div class="inputBox">
+                            <span>name on card :</span>
+                            <input type="text" placeholder="mr. john deo">
+                        </div>
+                        <div class="inputBox">
+                            <span>credit card number :</span>
+                            <input type="number" placeholder="1111-2222-3333-4444">
+                        </div>
+                        <div class="inputBox">
+                            <span>exp month :</span>
+                            <input type="text" placeholder="january">
+                        </div>
+        
+                        <div class="flex">
+                            <div class="inputBox">
+                                <span>exp year :</span>
+                                <input type="number" placeholder="2022">
+                            </div>
+                            <div class="inputBox">
+                                <span>CVV :</span>
+                                <input type="text" placeholder="1234">
+                            </div>
+                        </div>        
+                    </div>            
+                </div> 
+                      
+                <button type="button" onclick="pay()" class="pay-btn">PAY</button> 
+                    
+            </form>
+        
+        </div>
+            
+    </section>      
+      <div class="overlay1 hidden1"></div>      
+</div>
+<!-- end -->
+<!-- main area -->
+<div id="home-page">
+    <div class="container-item">
+        <div class="header">
+            <p class="logo">{{email}}</p>
+            <div class="cart"><button class="btn btn-open">MY Cart</button><i class="fa-solid fa-cart-shopping"></i><p id="count">0</p></div>
+        </div>
+        <div id="root"></div>
+    </div>
+    <div class="h-line"></div>
+<!-- billing -->
+    <div class="bill-header">Ask Jarvis For Invoices</div>
+    <div id="billing" class="scrollable-element">
+    <div class="bill">
+         <!-- <div>Ask Jaarvis for invoice</div>   -->
+    </div> 
+    <button id="prev"> &lt;&lt; </button><span class="prevNext">1</span>
+
+<button id="next"> &gt;&gt;</button>
+    </div>
+<!-- billing end -->
+<!-- <button onclick="captureVisiblePart()">Capture Visible Part</button>
+<canvas id="screenshot"></canvas> To display the captured image -->
+
+</div>
+    
+
+
+
+<div class="container">
+    <div class="chatbox">
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__image--header">
+                    <img src="{{ url_for('static', filename='images/bot.png') }}" style="border-radius: 50%;" width="50px" height="50px" alt="image"/>
+                </div>
+                <div class="chatbox__content--header">
+                    <h4 class="chatbox__heading--header">Chat support</h4>
+                    <p class="chatbox__description--header">Hi. My Jarvis is Sam. How can I help you?</p>
+                </div>
+            </div>
+            <div class="chatbox__messages temp" id="purchasedItems">
+                <div></div>
+            </div>
+            <div class="chatbox__footer">
+                <input type="text" placeholder="Write a message...">
+                <button class="chatbox__send--footer send__button">Send</button>
+            </div>
+        </div>
+        <div class="chatbox__button">
+            <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+        </div>
+    </div>
+</div>
+</div>
+
+        <script>
+            
+            var stat = JSON.parse('{{ status | tojson | escape }}');
+            console.log("updated"+stat);
+            if(stat==='admin'){
+                document.getElementById('body1').style.display='none';
+                document.querySelector('.body2').style.display='block';
+            }
+            if(stat==='user'){
+                document.querySelector('.body2').style.display='none';
+                    document.getElementById('body1').style.display='block';
+            }  
+            
+            //
+    // function captureVisiblePart() {
+    //     const scrollableElement = document.querySelector(".scrollable-element");
+
+    //     // Set the viewport area of the element to capture
+    //     const { scrollTop, clientHeight } = scrollableElement;
+        
+    //     html2canvas(scrollableElement, {
+    //         scrollY: -scrollTop, // Adjusts to only capture visible portion
+    //         height: clientHeight // Sets the height to capture only visible part
+    //     }).then((canvas) => {
+    //         var screenshotCanvas=document.getElementById('screenshot');
+    //         screenshotCanvas.width = canvas.width;  // Set the width to match the captured image
+    //         screenshotCanvas.height = canvas.height; 
+    //         const ctx = screenshotCanvas.getContext('2d');
+    //         ctx.clearRect(0, 0, screenshotCanvas.width, screenshotCanvas.height); // Clear previous drawing
+    //         ctx.drawImage(canvas, 0, 0);
+    //         // Or to convert to image format:
+    //         const imageURL = canvas.toDataURL();
+    //         console.log("Captured Image URL:", imageURL);
+    //     });
+    // }
+            //
+        </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='dom-to-image.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+{
+  "intents": [
+
+    {
+      "tag": "order",
+      "patterns": [
+        "order",
+        "show my order",
+        "my order",
+        "can you show my older orders",
+        "hey can you list my all orders",
+        "may i see older orders",
+        "please list my all time order"
+      ],
+      "responses": [
+        "order"
+      ]
+    },
+    {
+      "tag": "cart",
+      "patterns": [
+        "cart",
+        "show my cart",
+        "my cart",
+        "can you show my cart",
+        "hey can you list my all carts",
+        "may i see cart item",
+        "please list my all cart item"
+      ],
+      "responses": [
+        "cart"
+      ]
+    },
+    {
+      "tag": "invoice",
+      "patterns": [
+        "invoice",
+        "show invoice",
+        "bill",
+        "can you show bill",
+        "hey can you list all time invoices",
+        "may i see bill",
+        "please list all bills"
+      ],
+      "responses": [
+        "invoice"
+      ]
+    },
+    {
+      "tag": "download",
+      "patterns": [
+        "download it",
+        "download",
+        "download this invoice",
+        "download this bill",
+        "download current one",
+        "save invoice",
+        "save current"
+      ],
+      "responses": [
+        "download"
+      ]
+    },
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "items",
+      "patterns": [
+        "Which items do you have?",
+        "What kinds of items are there?",
+        "What do you sell?"
+      ],
+      "responses": [
+        "We sell coffee and tea",
+        "We have coffee and tea"
+      ]
+    },
+    {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with Paypal?",
+        "Can I pay cash?",
+        "Are you cash only?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and Paypal",
+        "We accept most major credit cards, and Paypal"
+      ]
+    },
+    {
+      "tag": "delivery",
+      "patterns": [
+        "How long does delivery take?",
+        "How long does shipping take?",
+        "When do I get my delivery?"
+      ],
+      "responses": [
+        "Delivery takes 2-4 days",
+        "Shipping takes 2-4 days"
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    },
+
+        {
+          "tag": "payment1",
+          "patterns": ["Do you accept cash?"],
+          "responses": ["Yes, we accept cash payments."]
+        },
+        {
+          "tag": "payment2",
+          "patterns": ["Can I pay with a credit card?"],
+          "responses": ["Absolutely, you can pay with a credit card."]
+        },
+        {
+          "tag": "payment8",
+          "patterns": ["Do you take checks?"],
+          "responses": ["Unfortunately, we do not accept checks."]
+        },
+        {
+          "tag": "payment9",
+          "patterns": ["Can I use Apple Pay?"],
+          "responses": ["Yes, Apple Pay is a valid payment option."]
+        },
+        {
+          "tag": "payment10",
+          "patterns": ["Are there any payment options available?"],
+          "responses": ["We have multiple payment options available."]
+        },
+        {
+          "tag": "payment11",
+          "patterns": ["What payment methods can I use?","payment methods?"],
+          "responses": ["You can use credit cards, debit cards, and Paypal for payment."]
+        },
+        {
+          "tag": "payment14",
+          "patterns": ["Do you accept Google Pay?"],
+          "responses": ["Yes, we accept Google Pay as well."]
+        },
+        {
+          "tag": "payment15",
+          "patterns": ["Can I pay in installments?"],
+          "responses": ["We do not offer payment plans at this time."]
+        },
+        {
+          "tag": "payment19",
+          "patterns": ["Are payments secure?"],
+          "responses": ["Payments are processed securely to ensure your information is safe."]
+        },
+        {
+          "tag": "payment20",
+          "patterns": ["What if my payment fails?"],
+          "responses": ["If your payment fails, please try using another method."]
+        },
+        {
+          "tag": "payment24",
+          "patterns": ["Can I pay online?"],
+          "responses": ["Yes, you can pay for your order online."]
+        },
+        {
+          "tag": "general question1",
+          "patterns": ["Your name?"],
+          "responses": ["I'm a chatbot here to assist you!"]
+        },
+        {
+          "tag": "general question2",
+          "patterns": ["Contact customer service?"],
+          "responses": ["You can reach customer service via email at support@example.com."]
+        },
+        {
+          "tag": "general question3",
+          "patterns": ["Hours of operation?"],
+          "responses": ["We are open from 9 AM to 5 PM, Monday to Friday."]
+        },
+        {
+          "tag": "general question4",
+          "patterns": ["Where are you located?"],
+          "responses": ["We are located at 123 Main Street, Anytown, USA."]
+        },
+        {
+          "tag": "general question5",
+          "patterns": ["Services you offer?"],
+          "responses": ["We offer a variety of services including consulting, support, and training."]
+        },
+        {
+          "tag": "general question6",
+          "patterns": ["Mobile app available?"],
+          "responses": ["Yes, we have a mobile app available on iOS and Android."]
+        },
+        {
+          "tag": "general question7",
+          "patterns": ["Change my order?"],
+          "responses": ["Yes, you can change your order within 24 hours of placing it."]
+        },
+        {
+          "tag": "general question8",
+          "patterns": ["Reset my password?"],
+          "responses": ["To reset your password, click on 'Forgot Password' on the login page."]
+        },
+        {
+          "tag": "general question9",
+          "patterns": ["Return policy?"],
+          "responses": ["You can return items within 30 days for a full refund."]
+        },
+        {
+          "tag": "general question10",
+          "patterns": ["Do you offer discounts?"],
+          "responses": ["Yes, we offer discounts during special promotions and for bulk purchases."]
+        },
+        {
+          "tag": "general question11",
+          "patterns": ["Track my order?"],
+          "responses": ["You can track your order using the tracking link sent to your email."]
+        },
+        {
+          "tag": "general question12",
+          "patterns": ["Payment methods accepted?"],
+          "responses": ["We accept credit cards, debit cards, and Paypal."]
+        },
+        {
+          "tag": "general question13",
+          "patterns": ["Cancel my subscription?"],
+          "responses": ["Yes, you can cancel your subscription anytime through your account settings."]
+        },
+        {
+          "tag": "general question14",
+          "patterns": ["Encounter an error?"],
+          "responses": ["Please contact customer support if you encounter any errors."]
+        },
+        {
+          "tag": "general question15",
+          "patterns": ["Free trials offered?"],
+          "responses": ["Yes, we offer a free trial for 30 days."]
+        },
+        {
+          "tag": "general question16",
+          "patterns": ["Get a product demo?"],
+          "responses": ["Yes, you can request a demo through our website."]
+        },
+        {
+          "tag": "general question17",
+          "patterns": ["Privacy policies?"],
+          "responses": ["You can read our privacy policy on our website under the 'Privacy' section."]
+        },
+        {
+          "tag": "general question18",
+          "patterns": ["Subscribe to newsletter?"],
+          "responses": ["You can subscribe to our newsletter at the bottom of our website."]
+        },
+        {
+          "tag": "general question19",
+          "patterns": ["FAQ section available?"],
+          "responses": ["Yes, you can find our FAQ section on our website."]
+        },
+        {
+          "tag": "general question20",
+          "patterns": ["Your mission statement?"],
+          "responses": ["Our mission is to provide excellent service and value to our customers."]
+        },
+        {
+          "tag": "general question21",
+          "patterns": ["I want to Leave feedback?"],
+          "responses": ["You can leave feedback through our contact form on the website."]
+        },
+        {
+          "tag": "general question22",
+          "patterns": ["Job openings available?"],
+          "responses": ["You can find our current job openings on the 'Careers' page of our website."]
+        },
+        {
+          "tag": "general question24",
+          "patterns": ["I Forgot my username?"],
+          "responses": ["If you forgot your username, please contact support for assistance."]
+        },
+        {
+          "tag": "general question25",
+          "patterns": ["Do you have Social media accounts?"],
+          "responses": ["Yes, you can follow us on Facebook, Twitter, and Instagram."]
+        },
+        {
+          "tag": "general question26",
+          "patterns": ["what Languages you support?"],
+          "responses": ["We currently support English, Spanish, and French."]
+        },
+        {
+          "tag": "general question27",
+          "patterns": ["Can I Update personal information?"],
+          "responses": ["Yes, you can update your personal information in your account settings."]
+        },
+        {
+          "tag": "general question28",
+          "patterns": ["How do i report website problem?"],
+          "responses": ["Please report any issues via our contact form."]
+        },
+        {
+          "tag": "general question29",
+          "patterns": ["Can i Share account with someone?"],
+          "responses": ["We recommend keeping your account private for security reasons."]
+        },
+        {
+          "tag": "general question30",
+          "patterns": ["Customer satisfaction guarantee?"],
+          "responses": ["We guarantee customer satisfaction with all our products and services."]
+        }
+      ]
+}
